@@ -7,3 +7,6 @@ obj-$(CONFIG_LZ4_DECOMPRESS) += lz4.o
 obj-$(CONFIG_LZ4HC_COMPRESS) += lz4hc.o
 CFLAGS_lz4.o  += -DLZ4_HEAPMODE=1
 CFLAGS_lz4hc.o += -DLZ4HC_HEAPMODE=1
+
+obj-$(CONFIG_ARM64) += $(addprefix lz4armv8/, lz4accel.o lz4armv8.o)
+
